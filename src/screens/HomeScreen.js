@@ -1,17 +1,65 @@
 import React from 'react';
-import { View, Text, StyleSheet, Button } from 'react-native';
+import { Text, StyleSheet, View, Button, TouchableOpacity} from 'react-native';
 
-const HomeScreen = ({ navigation }) => {
+const HomeScreen = (props) => {
   return (
-    <View>
-      <Text style={{ fontSize: 30 }}>HomeScreen</Text>
-      <Button title="Layout" onPress={() => navigation.navigate('Layout')} />
-    </View>
-  );
+      <View>
+        <Button
+            onPress={()=>props.navigation.navigate('Component')}
+            title='Go to Component'
+            style={styles.Buttons}
+        />
+
+        <Button
+            onPress={()=>props.navigation.navigate('List')}
+            title='Go to List'
+            style={styles.Buttons}
+        />
+
+        <Button
+            onPress={()=>props.navigation.navigate('Image')}
+            title='Go to Image'
+            style={styles.Buttons}
+        />
+
+          <Button
+              onPress={()=>props.navigation.navigate('Counter')}
+              title='Go to Counter'
+              style={styles.Buttons}
+          />
+
+          <Button
+              onPress={()=>props.navigation.navigate('Color')}
+              title='Go to Colors'
+              style={styles.Buttons}
+          />
+
+          <Button
+              onPress={()=>props.navigation.navigate('Square')}
+              title='Go to Color Generator'
+              style={styles.Buttons}
+          />
+
+          <Button
+              onPress={()=>props.navigation.navigate('Text')}
+              title='Go to Text'
+              style={styles.Buttons}
+          />
+      </View>
+  )
 };
 
-HomeScreen.navigationOptions = {
-  title: 'Home'
-};
+const styles = StyleSheet.create({
+  Touchable: {
+    fontSize: 20,
+    padding:25
+  },
+  Buttons:{
+    marginVertical: 40,
+    padding:25,
+    borderBottomColor:'white',
+    borderBottomWidth:2
+  }
+});
 
 export default HomeScreen;
